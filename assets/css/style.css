@@ -1,0 +1,946 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+}
+
+ul,
+ol {
+    margin: 0;
+}
+
+
+input {
+    display: block;
+    width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.gap-5 {
+    gap: 5px;
+}
+
+.gap-15 {
+    gap: 15px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-25 {
+    gap: 25px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-center: center;
+}
+
+.justify-content-space {
+    justify-content: space-between;
+}
+
+.util__panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .util__panel {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+
+/*** ============== ANIMTIONS START ===========*/
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes verticalslide {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/*** ============== ANIMTIONS END ===========*/
+
+
+/*** ============== VARIABLES START ===========*/
+
+:root {
+
+    --clr-primary: #0E870E;
+    --clr-accent: #DD7238;
+
+}
+
+/*** ============== VARIABLES END ===========*/
+
+/*** ========= UTILITIES START ==========*/
+
+.hr-animation-container {
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    gap: 15px;
+}
+
+.hr-animation-container>* {
+    min-width: max-content;
+    overflow-x: hidden;
+    white-space: nowrap;
+    display: flex;
+    flex: 1;
+    gap: 15px;
+    animation: 5s slide infinite linear
+}
+
+.hr-animation-container>* * {
+    white-space: normal;
+}
+
+.vertical__animation__container {
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.vertical__animation__container>* {
+    display: flex;
+    flex-direction: column;
+
+    height: max-content;
+
+    /* white-space: nowrap; */
+    animation: 5s verticalslide infinite linear;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 15px;
+
+    box-shadow: 0px 3px 12px 0px rgba(38, 38, 38, 0.15);
+    border-radius: 5px;
+    border: none;
+
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+
+    white-space: nowrap;
+}
+
+.btn.btn-primary:hover {
+    background: var(--clr-accent);
+}
+
+.btn.btn-secondary:hover {
+    background: var(--clr-primary);
+}
+
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: var(--clr-accent);
+    color: #fff;
+}
+
+span.org-text {
+    color: var(--clr-accent);
+}
+
+.section__heading {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+section .container>.section__heading {
+    margin-bottom: 40px;
+}
+
+.brown__heading {
+    color: var(--clr-accent);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 7px;
+    line-height: normal;
+}
+
+/*** ========= UTILITIES END ==========*/
+
+
+
+/***============ HEADER CSS START ================  */
+
+header {
+    padding: 16px 0;
+    border: 0.6px solid #A6A6A6;
+}
+
+header .container {
+    padding: 0;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 77px;
+}
+
+.navList {
+    max-width: 632px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+}
+
+.navList li {
+    position: relative;
+
+    padding: 0 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.navList li:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    width: 150px;
+
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.submenu li {
+    display: block;
+    text-align: left;
+}
+
+.submenu li a {
+    color: #000;
+}
+
+.headerButton {
+    max-width: 160px;
+    width: 100%;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.burger-menu {
+    /* justify-self: flex-end; */
+    position: absolute;
+    right: 10.5%;
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu>div {
+    width: 45px;
+    height: 8px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    background-color: #000;
+}
+
+
+.mobileLogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.cross {
+    outline: none;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+
+.mobileNavList {
+    list-style-type: none;
+}
+
+.mobileNavList li {
+    padding: 22px 0;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    border-bottom: 1px solid #000;
+    width: 100%;
+}
+
+.mobileNavList li a {
+    color: #000 !important;
+}
+
+.mobileNavList li:last-child {
+    border: none;
+}
+
+.mobileNavList li a ion-icon {
+    margin-right: 8px;
+}
+
+
+.mobileNavList li:nth-of-type(4) {
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 991px) {
+
+    body {
+        position: relative;
+        width: 100%;
+    }
+
+
+    .topNav {
+        padding: 28px 40px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .bottomNav {
+        position: static;
+    }
+
+
+    .navBtn {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .mobile-nav {
+        /* display: block; */
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-width: 80%;
+        background-color: #fff;
+        height: 100%;
+        z-index: 1;
+        padding: 40px 30px;
+        left: 0;
+    }
+
+
+}
+
+@media only screen and (max-width: 587px) {
+    .mobile-nav {
+        width: 100%;
+    }
+
+    .mobile-nav {
+        max-width: 100%;
+    }
+
+    .mobileNavList li {
+        font-size: 14px;
+        /* width: ; */
+    }
+
+    .headSocialIcons {
+        gap: 10px;
+    }
+
+    .bankDetails a {
+        font-size: 12px;
+    }
+
+
+}
+
+/***============ HEADER CSS END ================  */
+
+/**============ HOME BANNER CSS START ================  */
+.homeBanner {
+    padding: 57px 0 113px;
+}
+
+.homeText {
+    position: relative;
+    top: 33px;
+
+    text-align: center;
+}
+
+.homeText h1 {
+    font-family: Inter;
+    font-size: 50px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.homeText h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    margin-bottom: 30px;
+}
+
+.homeBannerBtn {
+    text-align: center;
+}
+
+.homeSlide .img-wrap img {
+    margin: 0 auto;
+}
+
+.homeBanner .container {
+    max-width: 1413px;
+    padding: 0 15px;
+}
+
+.slick-dots {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.slick-dots li {
+    padding: 0;
+    width: 15px;
+    height: 7px;
+    border-radius: 2px;
+    background: rgba(221, 114, 56, 0.40);
+    opacity: 1;
+    margin: 0;
+}
+
+.slick-dots li.slick-active {
+    border-radius: 2px;
+    background: #DD7238;
+    width: 37px;
+    height: 7px;
+}
+
+.slick-dots li button:before {
+    display: none;
+}
+
+/**============ HOME BANNER CSS END ================  */
+
+/**============ ABOUT START ================  */
+
+.about {
+    padding: 94px 0;
+    max-width: 1413px;
+    width: 100%;
+
+    margin: 0 auto;
+
+    background: #F5F5F5;
+}
+
+.about .img-wrap {
+    max-width: 450px;
+    width: 100%;
+}
+
+.aboutText {
+    max-width: 593px;
+    width: 100%;
+}
+
+.aboutText p {
+    width: 100%;
+    max-width: 508px;
+
+    margin-bottom: 30px;
+}
+
+/**============ ABOUT END ================  */
+
+/**============ FOCUS START ================  */
+.focus {
+    padding: 150px 0;
+}
+
+.focus .hr-animation-container {
+    margin-bottom: 80px;
+}
+
+.focus .hr-animation-container>* {
+    animation-duration: 30s;
+    height: 435px;
+}
+
+.focus .hr-animation-container:hover>* {
+    animation-play-state: paused;
+}
+
+.focus .hr-animation-container>*:hover~ {
+    animation-play-state: paused;
+}
+
+.focus>.section__heading {
+    margin-bottom: 20px;
+}
+
+.focusCards {
+    max-width: 356px;
+    height: 412px;
+
+    padding: 38px 22px 57px;
+    text-align: center;
+
+    border-radius: 5px;
+    border: 1.5px solid #D3D3D3;
+
+    transition: all 0.2s ease-in-out;
+
+    transform: translateY(20px);
+}
+
+.focusCards:hover {
+    border-radius: 5px;
+    background: var(--clr-primary);
+    color: #fff;
+
+    transform: translateY(0);
+}
+
+.focusCards:hover .focus_white {
+    display: block;
+}
+
+.focusCards:hover .focus_black {
+    display: none;
+}
+
+.focus_white {
+    display: none;
+}
+
+.focus_black {
+    display: block;
+}
+
+.focusCards .img-wrap {
+    margin-bottom: 20px;
+}
+
+.focusCards .img-wrap img {
+    margin: 0 auto;
+
+    filter: grayscale(1);
+}
+
+.focusCards h6 {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.focusCards p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.focusButton {
+    text-align: center;
+}
+
+/**============ FOCUS END ================  */
+
+/**============ NUMBER SECTION START ================  */
+.numberSection {
+    max-width: 1413px;
+    margin: 0 auto;
+
+    background: var(--clr-primary);
+
+    padding: 70px 0;
+    border-radius: 15px;
+}
+
+.numberCards h5 {
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    color: #fff;
+}
+
+.numberCards h6 {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #fff;
+    text-align: center;
+}
+
+/**============ NUMBER SECTION END ================  */
+
+
+/**============ COMPAIGNS SECTION START ================  */
+.campaignSection {
+    padding: 150px 0;
+}
+
+.campaignCards {
+    position: relative;
+
+    width: 100%;
+    max-width: 357px;
+
+    border-radius: 8px;
+
+    background: #FFF;
+    border: 1px solid #fff;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.share__img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    background-color: #fff;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    cursor: pointer;
+
+    padding: 5px;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.share__img:hover {
+    scale: 1.1;
+    border: 1px solid var(--clr-primary);
+}
+
+.campaignCards .img-wrap img {
+    border-radius: 8px 8px 0 0;
+}
+
+.campaignCards:hover {
+    border: 1px solid rgba(14, 135, 14, 0.50);
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.15);
+}
+
+.campaignText {
+    text-align: center;
+    padding: 30px 16px 35px;
+}
+
+.campaignText h5 {
+
+    color: #222;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.campaignText p {
+    color: #383838;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 18px;
+}
+
+.campaignText a {
+    max-width: 286px;
+    width: 100%;
+}
+
+/**============ COMPAIGNS SECTION END ================  */
+
+/**============ GALLERY SECTION START ================  */
+.galleryMain {
+    position: relative;
+
+    display: flex;
+    gap: 13px;
+
+    height: 100%;
+
+    border-radius: 15px;
+    background: #000;
+
+    max-width: 1396px;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.galleryText {
+    position: absolute;
+    z-index: 1;
+
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+.galleryText h5 {
+    color: #FFF;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.galleryText p {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.galleryText div {
+    text-align: center;
+
+    max-width: 417px;
+    width: 100%;
+}
+
+.gallerySection .vertical__animation__container {
+    max-height: 710px;
+    border-radius: 15px 15px 15px 15px;
+    gap: 15px;
+}
+
+.reverse__animated > * {
+    animation-direction: reverse;
+}
+
+.gallerySection .vertical__animation__container>* {
+    animation-duration: 60s;
+    gap: 15px;
+}
+
+
+
+/**============ GALLERY SECTION END ================  */
+
+
+/**============ FOOTER START ================  */
+
+footer {
+    padding: 150px 0 45px;
+}
+
+footer .container {
+    max-width: 1240px;
+}
+
+
+.footerText {
+    max-width: 316px;
+    width: 100%;
+}
+
+.footerText .ft__logo {
+    margin-bottom: 10px;
+}
+
+.footerText p {
+    margin-bottom: 98px;
+    font-size: 16px;
+}
+
+.ft__icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+}
+
+.ft__links .img-wrap {
+    margin-left: 30px;
+}
+
+.ft__icons li {
+    display: flex;
+    align-items: center;
+}
+
+.ft__icons i {
+    color: var(--clr-accent);
+}
+
+.ft__icons i:hover {
+    color: var(--clr-primary);
+}
+
+
+.ft__links {
+    max-width: 643px;
+    width: 100%;
+}
+
+.ft__links .util__panel {
+    margin-bottom: 161px;
+}
+
+.ft__links li {
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+.ft__links ul li a {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: all 0.1s ease-in-out;
+}
+
+.ft__links ul li a:hover {
+    color: var(--clr-primary);
+}
+
+.footerSecondary p {
+    text-align: right;
+    margin: 0;
+    font-size: 16px;
+}
+
+/**============ FOOTER END ================  */

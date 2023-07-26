@@ -1,0 +1,49 @@
+@media only screen and (max-width: 992px) {
+
+    section,
+    footer {
+        padding: 50px 0 !important;
+    }
+
+    .aboutText {
+        text-align: center;
+    }
+    
+    .aboutText p {
+        margin: 10px auto;
+    }
+
+    .numberCards {
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .focus .hr-animation-container{
+        margin-bottom: 20px;
+    }
+
+    .footerText p {
+        margin: 0  0 10px;
+    }
+
+    .footerMain {
+        text-align: center;
+    }
+
+    .ft__links .util__panel {
+        margin-bottom: 20px;
+    }
+
+    .ft__logo img {
+        margin: 0 auto;
+    }
+
+    .gallerySection .vertical__animation__container {
+        height: auto;
+        max-height: auto;
+    }
+
+}
